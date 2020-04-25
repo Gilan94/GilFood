@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>GilFood</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/style.css') }}">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<header id="header">
+		<div class="container">
+			<a href="/" id="logo" title="GilFood<">GilFood</a>
+			<div class="right-links">
+				<ul>
+					<li><a href="/basket"><span class="ico-products"></span> 0 </a></li>
+				
+				</ul>
+			</div>
+		</div>
+		<!-- / container -->
+	</header>
+	<!-- / header -->
+
+	<nav id="menu">
+		<div class="container">
+			<div class="trigger"></div>
+			<ul>
+				<li><a href="/">Главная</a></li>
+				<li><a href="/category/1">Зелень</a></li>
+				<li><a href="/category/2">Овощи</a></li>
+				<li><a href="/category/3">Фрукты</a></li>
+				<li><a href="/about">О нас</a></li>
+			
+			</ul>
+		</div>
+		<!-- / container -->
+	</nav>
+	<!-- / navigation -->
+			{% block content%}
+			
+			
+			{% endblock %}
+		<footer id="footer">
+		<div class="container">
+			<div class="cols">
+				<div class="col">
+					<h3>Часто задаваемые вопросы</h3>
+					<ul>
+						<li><a href="#">Как можно оплатить за проудкты? </a></li>
+						
+					</ul>
+				</div>
+				<div class="col media">
+					<h3>Соц сети</h3>
+					<ul class="social">
+						<li><a href="#"><span class="ico ico-fb"></span>Facebook</a></li>
+						<li><a href="https://web.telegram.org/#/im?p=@Gillfood_bot"><span class="ico ico-ph"></span>Telegram</a></li>
+						
+					</ul>
+				</div>
+				<div class="col contact">
+					<h3>Контакты</h3>
+					<p>Gilfood <br>al-Faraby Avenue Street<br>Almaty</p>
+					<p><span class="ico ico-em"></span><a href="#">gilan_94@mail.ru</a></p>
+					<p><span class="ico ico-ph"></span>+7(707) 768-444-48</p>
+				</div>
+				<div class="col newsletter">
+					<h3>Подписаться на рассылку</h3>
+					<p>Получайте все свежие новости на почту</p>
+					<form action="#">
+						<input type="text" placeholder="Your email address...">
+						<button type="submit"></button>
+					</form>
+				</div>
+			</div>
+			<p class="copy">Copyright 2020. All rights reserved.</p>
+		</div>
+		<!-- / container -->
+	</footer>
+	<!-- / footer -->
+
+	
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>window.jQuery || document.write("<script src='js/jquery-1.11.1.min.js'>\x3C/script>")</script>
+	<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

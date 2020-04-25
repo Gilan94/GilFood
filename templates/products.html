@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+	<!-- / navigation -->
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<ul>
+				<li><a href="/">Главная</a></li>
+				<li>{{ category.name }}</li>
+			</ul>
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+	<div id="body">
+		<div class="container">
+			
+			<div class="products-wrap">
+				
+				<div id="content">
+					<section class="products">
+					
+					{% for product in category.products %}
+						<article>
+							<a href="/product/{{ product.id }}"><img src="{{ product.img_url }}" alt=""></a>
+							<h3><a href="/product/{{ product.id }}">{{ product.name }}</a></h3>
+							<h4><a href="/product/{{ product.id }}">{{ product.cost }} тг</a></h4>
+							<a href="#" class="btn-add">Добавить</a>
+						</article>
+					
+					{% endfor %}
+					</section>
+				</div>
+				<!-- / content -->
+			</div>
+		
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+	
+{% endblock %}

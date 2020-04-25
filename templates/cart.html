@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+	<!-- / navigation -->
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<ul>
+				<li><a href="/">Главная</a></li>
+				<li>Cart</li>
+			</ul>
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+	<div id="body">
+		<div class="container">
+			<div id="content" class="full">
+				<div class="cart-table">
+					<table>
+						<tr>
+							<th class="items">Items</th>
+							<th class="price">Price</th>
+							
+							<th class="delete"></th>
+						</tr>
+						{% for basket in baskets %}
+						<tr>
+							<td class="items">
+								<div class="image">
+									<img src="{{ basket.food.img_url }}" alt="">
+								</div>
+								<h3><a href="#">{{ basket.name }}</a></h3>
+								<p>{{ basket.food.description }}</p>
+							</td>
+							<td class="price">{{ basket.cost }} тг</td>
+						
+							<td class="delete"><a href="#" class="ico-del"></a></td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+
+				<div class="total-count">
+					
+					<h3>Total: <strong></strong></h3>
+					<a href="#" class="btn-grey">ОПЛАТИТЬ</a>
+				</div>
+			
+			</div>
+			<!-- / content -->
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+		
+{% endblock %}

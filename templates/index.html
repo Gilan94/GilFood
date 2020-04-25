@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div id="slider">
+		<ul>
+			<li style="background-image: url(https://cdn5.vedomosti.ru/crop/image/2019/2t/sak52/original-10o2.jpg?height=609&width=1082)">
+				<h3>Use smartphone</h3>
+				<h2>We are in Telegram</h2>
+				<a href="https://web.telegram.org/#/im?p=@Gillfood_bot" class="btn-more">Перейти</a>
+			</li>
+			<li class="purple" style="background-image: url(images/01.jpg)">
+				<h3>Try our products</h3>
+				<h2>Fresh and quality products</h2>
+				<a href="#" class="btn-more">Подробнее</a>
+			</li>
+		</ul>
+	</div>
+	<!-- / body -->
+
+	<div id="body">
+		<div class="container">
+		
+			<div class="last-products">
+				<h2>ПОСЛЕДНИЕ ДОБАВЛЕННЫЕ</h2>
+				<section class="products">
+				{% for  category in categories %}
+				{% for product in category.products %}
+					<article>
+						<img src="{{ product.img_url }}" alt="">
+						
+						<h3>{{ product.name}}</h3>
+						<h4>{{ product.cost}} тг</h4>
+						<a href="cart.html" class="btn-add">Добавить в корзину</a>
+					</article>
+					{% endfor %}
+					{% endfor %}
+				</section>
+			</div>
+		<section class="quick-links">
+	{% for  category in categories %}
+				<article class="red" style="background-image: url(images/3.jpg)">
+					<a href="/category/{{ category.id }}" class="table">
+						<div class="cell">
+							<div class="text">
+								<p> Перейти в раздел </p>
+								<hr>
+								<h3>{{ category.name }}</h3>
+								<hr>
+								
+						</div>
+					</a>
+				</article>
+						{% endfor %}
+			</section>
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+{% endblock %}

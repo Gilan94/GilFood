@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block content %}
+	<!-- / navigation -->
+
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<ul>
+				<li><a href="/">Главная</a></li>
+				<li>{{ food.name }}</li>
+			</ul>
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+	<div id="body">
+		<div class="container">
+			<div id="content" class="full">
+			
+				<div class="product">
+					<div class="image">
+						<img src="{{ food.img_url }}" alt="">
+					</div>
+					<div class="details">
+						<h1>{{ food.name }}</h1>
+						<h4>{{ food.cost }} тг</h4>
+						<div class="entry">
+							<p>{{ food.description }}</p>
+							<div class="tabs">
+								<div class="nav">
+									<ul>
+										<li class="active"><a href="#desc">Описание</a></li>
+										<li><a href="#spec">Особенности</a></li>
+									
+									</ul>
+								</div>
+								<div class="tab-content active" id="desc">
+									<p>{{ food.description }}</p>
+								</div>
+								<div class="tab-content" id="spec">
+									<p>Самый лучший =)</p>
+								</div>
+							
+							</div>
+						</div>
+						<form id="form_buying_product" class="form-inline" action="/basket_adding">
+						<div class="actions">
+							
+							<button type="submit" id="submit_btn" class="btn-grey"
+                                    data-product_id = "{{ food.id }}"
+                                    data-name ="{{ food.name }}"
+                                    data-price ="{{ food.cost }}"
+                                >Купить
+                                </button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- / content -->
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+
+                    
+	
+{% endblock %}
